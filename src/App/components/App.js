@@ -1,4 +1,5 @@
 import React from 'react';
+import fibbonaciSolver from '../scripts/fibbonaciSolver';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +19,9 @@ class App extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.setState({ answerValue: this.state.inputValue });
+    const n = parseInt(this.state.inputValue);
+
+    this.setState({ answerValue: fibbonaciSolver(n) });
   }
 
   render() {
