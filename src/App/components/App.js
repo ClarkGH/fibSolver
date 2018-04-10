@@ -1,5 +1,37 @@
 import React from 'react';
 import fibbonaciSolver from '../scripts/fibbonaciSolver';
+import styled, { css } from 'react-emotion';
+
+const Container = styled('div') `
+  font-family: Arial;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 600px;
+  height: 210px;
+  background-color: #ccc;
+  border-radius: 20px;
+  text-align: center;  
+`;
+
+const inputField = css`
+  height: 22px;
+  font-size: 18px;
+  width: 70px;
+  vertical-align: bottom;
+`
+
+const submitButton = css`
+  padding: 8px 15px;
+  border: 0 none;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  margin: 0px 0px 0px 4px;
+  border-radius: 5px; 
+`
 
 class App extends React.Component {
   constructor(props) {
@@ -26,18 +58,18 @@ class App extends React.Component {
 
   render() {
     return(
-      <div>
+      <Container>
         <h1>Fibbo-Notch it!</h1>
         <p>Get the Nth fibonacci value!</p>
-        <p className='output'>Your value is: {this.state.answerValue}</p>
+        <p>Your value is: {this.state.answerValue}</p>
         <form onSubmit={this.handleSubmit}>
           <label>
-            Get Nth value: 
-            <input type='number' value={this.state.inputValue} onChange={this.handleChange} />
+            Submit Nth value: 
+            <input className={inputField} type='number' value={this.state.inputValue} onChange={this.handleChange} />
           </label>
-          <input type='submit' value='Submit' />
+          <input className={submitButton} type='submit' value='Submit' />
         </form>
-      </div>
+      </Container>
     );
   }
 }
