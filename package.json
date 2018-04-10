@@ -5,6 +5,9 @@
   "repository": "https://github.com/ClarkGH/fibSolver.git",
   "author": "clarkgh <demolisho@hotmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
@@ -14,6 +17,7 @@
     "webpack-cli": "^2.0.14"
   },
   "dependencies": {
+    "express": "^4.16.3",
     "react": "^16.3.1",
     "react-dom": "^16.3.1"
   }

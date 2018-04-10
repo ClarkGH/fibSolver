@@ -1,24 +1,29 @@
 'use strict';
 
-function fibonacciSolver( nthValue ) {
+let multiplyMatrices = (...matrices) => {
+  return (matrices.reduce( ([a, b, c], [d, e, f]) => {
+    return [a * d + b * e, a * e + b * f, b * e + c * f];
+  }));
+}
 
-  if (nthValue < 0) {
-    throw new Error('You cannot use a negative value.');
-  } else if (nthValue === 0 || nthValue === 1) {
-    return nthValue;
+let matrixExponentation = (matrix, n) => {
+  if (n === 1) {
+    return matrix;
   }
 
-  let beforePrev = 0,
-    prev = 1,
-    currentVal;
+  let halves = matrixExponentation(matrix, Math.floor(n / 2));
 
-  for (var i = 1; i < nthValue; i++) {
-    currentVal = prev + beforePrev;
-    beforePrev = prev;
-    prev = currentVal;
+  return n % 2 === 0 ? multiplyMatrices(halves, halves) : multiplyMatrices(halves, halves, matrix);
+}
+
+let fibonacciSolver = (n) => {
+  if (n < 0 || n > 1476) {
+    return "Please submit a positive integer below 1477.";
   }
 
-  return currentVal;
+  return (n < 2 ? n : matrixExponentation([1, 1, 0], n - 1)[0]);
 }
 
 export default fibonacciSolver;
+
+// TODO: Work with larger numbers

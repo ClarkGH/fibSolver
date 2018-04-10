@@ -6,7 +6,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       inputValue: 0,
-      answerValue: 1,
+      answerValue: "Please submit a positive integer below 1477.",
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -41,6 +41,5 @@ class App extends React.Component {
     );
   }
 }
-
 
 export default App;
