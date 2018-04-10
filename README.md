@@ -1,6 +1,8 @@
-# Project Title
+# Fibbo-Notch it!
 
 A basic reactJS application that takes in an integer and returns the Nth fibbonaci value on the browser.
+
+It will currently only return up to the 1466th number, otherwise will return infinity.
 
 ## Getting Started
 
@@ -36,7 +38,7 @@ $ npm start
 
 * html/css/js
 * Nodejs/express
-* React
+* React/Emotionjs
 * Babel/Webpack
 
 ## License
